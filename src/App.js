@@ -2,6 +2,7 @@ import React from 'react'
 import './App.css';
 import ScoresData from './components/ScoresData';
 import WeatherData from './components/WeatherData';
+import Search from './components/Search';
 import Home from './components/Home';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -19,6 +20,7 @@ const App = () => {
         <a class="nav-link" aria-current="page" href="/">Home</a>
         <a class="nav-link" href="/scoresdata">ScoresData</a>
         <a class="nav-link" href="/weatherdata">WeatherData</a> 
+        <a class="nav-link" href="/searchdata">SearchData</a> 
       </div>
     </div>
   </div>
@@ -27,6 +29,7 @@ const App = () => {
       <Route exact path='/' component={Home}/>
       <Route exact path='/scoresdata' component={ScoresData}/>
       <Route exact path='/weatherdata' component={WeatherData}/>
+      <Route exact path='/searchdata' component={Search}/>
       </Router>
       
       
