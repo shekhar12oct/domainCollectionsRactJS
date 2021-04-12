@@ -4,8 +4,11 @@ import ScoresData from './components/ScoresData';
 import WeatherData from './components/WeatherData';
 import Search from './components/Search';
 import Home from './components/Home';
+import ChatApp from './ChatApp';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
+import Portfolio from './Portfolio';
+
 
 const App = () => {
   return (
@@ -20,7 +23,9 @@ const App = () => {
         <a class="nav-link" aria-current="page" href="/">Home</a>
         <a class="nav-link" href="/scoresdata">ScoresData</a>
         <a class="nav-link" href="/weatherdata">WeatherData</a> 
-        <a class="nav-link" href="/searchdata">SearchData</a> 
+        <a class="nav-link" href="/searchdata">SearchData</a>
+        <a class="nav-link" href="/chatapp">ChatApp</a> 
+        <a class="nav-link" href="/portfolio">PortFolio</a> 
       </div>
     </div>
   </div>
@@ -30,9 +35,9 @@ const App = () => {
       <Route exact path='/scoresdata' component={ScoresData}/>
       <Route exact path='/weatherdata' component={WeatherData}/>
       <Route exact path='/searchdata' component={Search}/>
-      </Router>
-      
-      
+      <Route exact path='/chatapp' component={ChatApp}/>
+      <Route exact path='/portfolio' component={Portfolio}/>
+      </Router> 
     </div>
   )
 }

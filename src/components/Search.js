@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './Search.css';
+
 
 const Search = () => {
   const [term, setTerm] = useState('programming');
@@ -9,7 +11,7 @@ const Search = () => {
   useEffect(() => {
     const timerId = setTimeout(() => {
       setDebouncedTerm(term);
-    }, 1000);
+    }, 500);
 
     return () => {
       clearTimeout(timerId);
@@ -27,7 +29,6 @@ const Search = () => {
           srsearch: debouncedTerm,
         },
       });
-
       setResults(data.query.search);
     };
     search();
@@ -53,6 +54,7 @@ const Search = () => {
   });
 
   return (
+    <div className="background">
     <div>
       <div className="ui form">
         <div className="field">
@@ -65,6 +67,7 @@ const Search = () => {
         </div>
       </div>
       <div className="ui celled list">{renderedResults}</div>
+    </div>
     </div>
   );
 };
